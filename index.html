@@ -1865,10 +1865,13 @@
 <script>
 // Scroll-reveal animations
 document.addEventListener('DOMContentLoaded', () => {
-  // Add reveal class to key elements
+  // Add reveal class to key elements (skip #hero and #about — always visible)
   const selectors = [
-    '.section-tag', '.section-title', '.section-desc',
-    '.about-card', '.about-hero-card', '.dates-strip',
+    '#schedule .section-tag', '#schedule .section-title', '#schedule .section-desc',
+    '#hotels .section-tag', '#hotels .section-title', '#hotels .section-desc',
+    '#restaurants .section-tag', '#restaurants .section-title', '#restaurants .section-desc',
+    '#nightlife .section-tag', '#nightlife .section-title', '#nightlife .section-desc',
+    '#flights .section-tag', '#flights .section-title', '#flights .section-desc',
     '.day-block', '.hotel-card', '.resto-row', '.club-card',
     '.flights-table', '.flights-placeholder',
     '[style*="background:rgba(255,255,255,0.12)"]'
@@ -1884,7 +1887,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
@@ -1900,6 +1903,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 20);
   }, { passive: true });
+
+  // Force scroll to top on load
+  window.scrollTo(0, 0);
 });
 </script>
 
