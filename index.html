@@ -933,6 +933,15 @@
     transform: translateY(0);
   }
 
+  /* Disable scroll animations on mobile to prevent scroll-jump bug */
+  @media (max-width: 800px) {
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
   /* ── HAMBURGER ── */
   .nav-hamburger {
     display: none;
