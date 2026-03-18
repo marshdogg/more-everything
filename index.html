@@ -996,30 +996,43 @@
       text-align: center;
     }
 
-    section { padding: 72px 24px; }
+    section { padding: 72px 20px; }
 
     .hero-title { font-size: clamp(52px, 14vw, 100px); }
+    .hero-sub { font-size: 16px; }
 
-    .floater { font-size: 32px !important; }
-    .floater:nth-child(1) { left: 4%; }
-    .floater:nth-child(2) { right: 4%; }
-    .floater:nth-child(3) { left: 2%; }
-    .floater:nth-child(4) { right: 2%; }
+    .floater { display: none !important; }
 
-    .about-grid { grid-template-columns: 1fr; }
+    .about-grid {
+      grid-template-columns: 1fr !important;
+      gap: 20px;
+    }
 
-    .dates-strip { gap: 20px; padding: 20px 24px; }
-    .date-item { min-width: 100px; }
+    .about-hero-card { padding: 28px 24px 24px; }
+    .about-hero-card h2 { font-size: 34px; }
 
-    .day-block { grid-template-columns: 1fr; gap: 8px; }
+    .about-card { padding: 28px 24px; }
+    .about-card h3 { font-size: 24px; }
 
-    .hotels-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: clamp(36px, 8vw, 56px); }
+    .section-desc { font-size: 15px; margin-bottom: 36px; }
+
+    .dates-strip {
+      gap: 16px;
+      padding: 20px 24px;
+      flex-direction: column;
+    }
+    .date-item { min-width: unset; }
+
+    .day-block { grid-template-columns: 1fr; gap: 8px; padding: 20px; }
+
+    .hotels-grid { grid-template-columns: 1fr !important; }
 
     .resto-row { grid-template-columns: 40px 1fr; gap: 16px; padding: 18px 20px; }
     .resto-cost { display: none; }
     .resto-name { font-size: 22px; }
 
-    .flights-table-header, .flight-row { grid-template-columns: 1.5fr 1fr 1fr; font-size: 13px; }
+    .flights-table-header, .flight-row { grid-template-columns: 1.5fr 1fr 1fr; font-size: 13px; padding: 12px 16px; }
     .flights-table-header div:last-child, .flight-row div:last-child { display: none; }
 
     #nightlife > .section-inner > div { grid-template-columns: 1fr !important; }
@@ -1027,16 +1040,40 @@
     .club-card { padding: 20px; }
     .club-name { font-size: 20px; }
 
-    footer { padding: 40px 24px; }
+    footer { padding: 40px 20px; }
     footer .footer-title { font-size: 36px; }
+
+    /* Flight section callout box */
+    #flights .section-inner > div[style*="display:flex"] {
+      flex-direction: column;
+      gap: 12px;
+    }
   }
 
   @media (max-width: 480px) {
-    .hero-badge { font-size: 12px; padding: 10px 18px; }
-    .dates-strip { flex-direction: column; gap: 12px; }
-    .flights-table-header, .flight-row { grid-template-columns: 1.5fr 1fr; font-size: 12px; padding: 12px 16px; }
+    section { padding: 56px 16px; }
+    .hero-badge { font-size: 11px; padding: 10px 16px; }
+    .hero-sub { font-size: 14px; }
+    .about-hero-card h2 { font-size: 28px; }
+    .about-card h3 { font-size: 22px; }
+    .loves-list li { font-size: 14px; }
+    .loves-list .icon { width: 32px; height: 32px; font-size: 16px; }
+    .dates-strip { padding: 16px 20px; }
+    .date-item .value { font-size: 18px; }
+    .flights-table-header, .flight-row { grid-template-columns: 1.5fr 1fr; font-size: 12px; padding: 10px 12px; }
     .flights-table-header div:nth-child(3), .flight-row div:nth-child(3) { display: none; }
-    .section-title { font-size: clamp(32px, 8vw, 56px); }
+    .section-title { font-size: clamp(28px, 8vw, 44px); }
+    .hotel-name { font-size: 20px; }
+    .hotel-desc { font-size: 12px; }
+    .day-block { padding: 16px; }
+    .day-date { font-size: 24px; }
+    .resto-row { padding: 14px 16px; gap: 12px; }
+    .resto-name { font-size: 20px; }
+    .resto-num { font-size: 32px; }
+    .club-card { padding: 16px; }
+    .club-name { font-size: 18px; }
+    .club-desc { font-size: 12px; }
+    footer .footer-title { font-size: 28px; }
   }
 </style>
 </head>
